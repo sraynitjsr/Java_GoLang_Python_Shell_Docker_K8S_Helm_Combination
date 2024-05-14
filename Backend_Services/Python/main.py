@@ -1,5 +1,10 @@
-def main():
-    print("This Folder Will Have Python Backend Service - Service Number 3")
+from flask import Flask
 
-if __name__ == "__main__":
-    main()
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello From Python API"
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5001)
